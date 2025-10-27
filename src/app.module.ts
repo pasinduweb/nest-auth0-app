@@ -7,6 +7,7 @@ import { join } from 'path';
 import { getTypeOrmConfig } from './config/typeorm.config';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { HelloModule } from './hello/hello.module';
 import { User } from './users/user.entity';
 
 @Module({
@@ -32,6 +33,7 @@ import { User } from './users/user.entity';
     }),
     UsersModule,
     AuthModule,
+    HelloModule,
   ],
   controllers: [],
   providers: [],
