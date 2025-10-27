@@ -4,6 +4,7 @@
 
 type Query {
   allUsers: [User!]!
+  protectedQuery: String!
 }
 
 type User {
