@@ -52,9 +52,11 @@ export class Auth0ManagementService {
       return this.managementToken;
     }
 
-    const domain = this.configService.get<string>('AUTH0_DOMAIN');
-    const clientId = this.configService.get<string>('AUTH0_CLIENT_ID');
-    const clientSecret = this.configService.get<string>('AUTH0_CLIENT_SECRET');
+    const domain = this.configService.get<string>('AUTH0_MGMT_DOMAIN');
+    const clientId = this.configService.get<string>('AUTH0_MGMT_CLIENT_ID');
+    const clientSecret = this.configService.get<string>(
+      'AUTH0_MGMT_CLIENT_SECRET',
+    );
     const audience = this.configService.get<string>('AUTH0_MGMT_AUDIENCE');
 
     if (!domain || !clientId || !clientSecret || !audience) {
