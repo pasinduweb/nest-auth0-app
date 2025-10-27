@@ -3,3 +3,4 @@ export { JwtStrategy } from './jwt.strategy';
 export { GqlAuthGuard } from './gql-auth.guard';
 export { RolesGuard } from './roles.guard';
 export { Roles } from './roles.decorator';
+export { Auth0ManagementService } from './auth0-management.service';
