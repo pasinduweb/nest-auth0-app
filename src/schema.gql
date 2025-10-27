@@ -6,6 +6,19 @@ type HelloResponse {
   message: String!
 }
 
+type Mutation {
+  adminCreateManager(email: String!, password: String!): Boolean!
+  adminCreateUser(email: String!, password: String!): Boolean!
+  createProduct(name: String!): Product!
+  managerCreateUser(email: String!, password: String!): Boolean!
+}
+
+type Product {
+  id: Int!
+  name: String!
+  ownerSub: String!
+}
+
 type Query {
   adminOnlyUsers: [User!]!
   allUsers: [User!]!
@@ -13,6 +26,7 @@ type Query {
   helloManager: HelloResponse!
   helloUser: HelloResponse!
   moderatedContent: String!
+  products: [Product!]!
   protectedQuery: String!
 }
 

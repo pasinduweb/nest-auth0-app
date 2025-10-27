@@ -8,7 +8,9 @@ import { getTypeOrmConfig } from './config/typeorm.config';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { HelloModule } from './hello/hello.module';
+import { ProductsModule } from './products/products.module';
 import { User } from './users/user.entity';
+import { Product } from './products/product.entity';
 
 @Module({
   imports: [
@@ -27,13 +29,14 @@ import { User } from './users/user.entity';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         ...getTypeOrmConfig(configService),
-        entities: [User],
+        entities: [User, Product],
       }),
       inject: [ConfigService],
     }),
     UsersModule,
     AuthModule,
     HelloModule,
+    ProductsModule,
   ],
   controllers: [],
   providers: [],
